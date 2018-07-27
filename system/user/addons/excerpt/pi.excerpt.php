@@ -104,52 +104,36 @@ Class Excerpt {
 	{
 		ob_start(); 
 		?>
-#Excerpt Plugin
+# Excerpt Plugin (for EE3/EE4)
+It's literally just the original and [obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay](https://github.com/thinkclay), but modified to run on ExpressionEngine 3 and 4.
 
-Wrap anything you want to be processed between the tag pairs. 
-This will strip out all tags automatically and do a limit on words after.
+## Usage
+Wrap anything you want to be processed between the tag pairs. This will strip out all tags automatically and do a limit on words after.
 
-    {exp:excerpt limit="50"}text you want processed{/exp:excerpt}
+```{exp:excerpt limit="50"}text you want processed{/exp:excerpt}```
 
+You can also wrap it around custom fields:
+
+```{exp:excerpt limit="50"}{EXAMPLE_FIELD}{/exp:excerpt}```
 
 ## Parameters
 Use the following parameters to specify what the plugin should return.
 
-### limit="5"
-The limit parameter lets you specify how many words or characters to return. Default 500
+### indicator="string"
+The `indicator` parameter can be used to append characters onto the end of the content, if it has been limited.
 
-### limit_type="words"
-The limit_type parameter lets you specify if you want to limit to words (words) or characters (chars).  
-When limiting to chars, the plugin returns whole words, so the actual number of charactars migh be slightly larger. 
+### limit="number"
+The `limit` parameter lets you specify how many words or characters to return. Defaults to `500`.
 
-    {exp:excerpt limit="2" limit_type="chars"}Hello World{/exp:excerpt}
-    returns: Hello
+### limit_type="words|chars"
+The `limit_type` parameter lets you specify if you want to limit to words (`words`) or characters (`chars`).  
 
-### indicator="..."
-The indicator parameter can be used to append characters onto the end of the content, if it has been limited.
-
-    {exp:excerpt limit="1" indicator="..."}Hello World{/exp:excerpt}
-    more than limit words, returns: Hello...
-    
-    {exp:excerpt limit="2" indicator="..."}Hello World{/exp:excerpt}
-    Not limited, returns: Hello World
-
-
+When limiting to characters, the plugin returns whole words, so the actual number of charactars might be slightly larger. 
 
 ## Changelog
 
-### Version 1.0.2
-- Added limit_type = words | chars
-
-### Version 1.0.1
-- Added indicator parameter
-
-### Version 1.0
+### Version 2.0
 - Initial release
-
-
-__Humans.txt__  
-thinkclay, bryantAXS, GDmac
 		<?php
 		$buffer = ob_get_contents();
 	
