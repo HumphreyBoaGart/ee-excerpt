@@ -103,38 +103,7 @@ Class Excerpt {
 	function usage()
 	{
 		ob_start(); 
-		?>
-# Excerpt Plugin (for EE3/EE4)
-It's literally just the original and [obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay](https://github.com/thinkclay), but modified to run on ExpressionEngine 3 and 4.
 
-## Usage
-Wrap anything you want to be processed between the tag pairs. This will strip out all tags automatically and do a limit on words after.
-
-```{exp:excerpt limit="50"}text you want processed{/exp:excerpt}```
-
-You can also wrap it around custom fields:
-
-```{exp:excerpt limit="50"}{EXAMPLE_FIELD}{/exp:excerpt}```
-
-## Parameters
-Use the following parameters to specify what the plugin should return.
-
-### indicator="string"
-The `indicator` parameter can be used to append characters onto the end of the content, if it has been limited.
-
-### limit="number"
-The `limit` parameter lets you specify how many words or characters to return. Defaults to `500`.
-
-### limit_type="words|chars"
-The `limit_type` parameter lets you specify if you want to limit to words (`words`) or characters (`chars`).  
-
-When limiting to characters, the plugin returns whole words, so the actual number of charactars might be slightly larger. 
-
-## Changelog
-
-### Version 2.0
-- Initial release
-		<?php
 		$buffer = ob_get_contents();
 	
 		ob_end_clean(); 
