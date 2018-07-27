@@ -17,18 +17,15 @@ Use the following parameters to specify what the plugin should return.
 The `indicator` parameter can be used to append characters onto the end of the content, if it has been limited.
 
 ```{exp:excerpt limit="1" indicator="..."}Hello World{/exp:excerpt}```
-Returns:
 > Hello...
 
 ```{exp:excerpt limit="2" indicator="..."}Hello World{/exp:excerpt}```
-Returns:
 > Hello World
 
 ### limit="number"
 The `limit` parameter lets you specify how many words or characters to return. Defaults to 500 if left undefined.
 
 ```{exp:excerpt limit="1"}Hello World{/exp:excerpt}```
-Returns:
 > Hello
 
 ### limit_type="words|chars"
@@ -37,7 +34,6 @@ The `limit_type` parameter lets you specify if you want to limit to words (`word
 When limiting to characters, the plugin returns whole words, so the actual number of charactars might be slightly larger. 
 
 ```{exp:excerpt limit="2" limit_type="chars"}Hello World{/exp:excerpt}```
-Returns:
 >Hello
 
 ### indicator="..."
