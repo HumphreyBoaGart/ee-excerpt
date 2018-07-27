@@ -1,5 +1,5 @@
 # Excerpt Plugin (for EE3/EE4)
-It's literally just @thinkclay's original [and obscenely useful EE2 plugin] (https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) but modified to run on ExpressionEngine 3 and 4.
+It's literally just @thinkclay's original [and obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) but modified to run on ExpressionEngine 3 and 4.
 
 ## Usage
 Wrap anything you want to be processed between the tag pairs. This will strip out all tags automatically and do a limit on words after.
