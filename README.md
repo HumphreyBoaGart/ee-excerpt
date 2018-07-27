@@ -46,8 +46,13 @@ Create a basic text input field for your channel (`{entry_description}` in this 
 With `{exp:excerpt}` wrapped around whatever fieldtype contains your page content, you can make sure EE will generate descriptions automatically if the field is left empty for that entry:
 
 ```
-<meta name="description" content="{if entry_description !=''}{entry_description}{if:else}{exp:excerpt limit='40' limit_type='words' indicator='...'}{EXAMPLE_BODY_FIELD}{/exp:excerpt}{/if}">
-<meta property="og:description" content="{if entry_description !=''}{entry_description}{if:else}{exp:excerpt limit='40' limit_type='words' indicator='...'}{EXAMPLE_BODY_FIELD}{/exp:excerpt}{/if}">
+{if entry_description !=''}
+<meta name="description" content="{entry_description}">
+<meta property="og:description" content="{entry_description}">
+{if:else}
+<meta name="description" content="{exp:excerpt limit='40' limit_type='words' indicator='...'}{EXAMPLE_BODY_FIELD}{/exp:excerpt}">
+<meta property="og:description" content="{exp:excerpt limit='40' limit_type='words' indicator='...'}{EXAMPLE_BODY_FIELD}{/exp:excerpt}">
+{/if}
 ```
 
 ## Changelog
