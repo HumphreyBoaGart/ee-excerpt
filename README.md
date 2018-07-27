@@ -36,9 +36,6 @@ When limiting to characters, the plugin returns whole words, so the actual numbe
 ```{exp:excerpt limit="2" limit_type="chars"}Hello World{/exp:excerpt}```
 >Hello
 
-### indicator="..."
-The `indicator` parameter can be used to append characters onto the end of the content, if it has been limited.
-
 ## Examples
 
 ### Meta Descriptions
