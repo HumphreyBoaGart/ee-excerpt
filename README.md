@@ -1,5 +1,5 @@
 # Excerpt Plugin (for EE3/EE4)
-It's literally just the original [obscenely useful EE2 plugin] (https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay] (https://github.com/thinkclay/) but modified to run on ExpressionEngine 3 and 4.
+It's literally just @thinkclay's original [and obscenely useful EE2 plugin] (https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) but modified to run on ExpressionEngine 3 and 4.
 
 ## Usage
 Wrap anything you want to be processed between the tag pairs. This will strip out all tags automatically and do a limit on words after.
@@ -45,13 +45,15 @@ The `indicator` parameter can be used to append characters onto the end of the c
 
 ## Examples
 
-### Dynamic Meta Descriptions
-One incredibly helpful thing you can do with this is to put it in your entry template. Create a basic text input field for your channel (`{entry_description}` in this example, make sure the formatting option is set to **None**) so you can manually define the description on an entry-by-entry basis if desired.
+### Meta Descriptions
+One thing this helps with is to spit out dynamically generated meta and Open Graph descriptions for your entries, with a manual override in the entry editor.
 
-With `{exp:excerpt}` wrapped around whatever fieldtype contains your page content, you can make sure EE can generate descriptions automatically if the field is left empty for that entry:
+Create a basic text input field for your channel (`{entry_description}` in this example, make sure the formatting option is set to **None**) so you can manually define the description on an entry-by-entry basis if desired.
 
-```<meta name="description" content="{if entry_description !=''}{entry_description}{if:else}{exp:excerpt limit='40' limit_type='words' indicator='...'}{EXAMPLE_BODY_FIELD}{/exp:excerpt}{/if}">```
-```<meta property="og:description" content="{if entry_description !=''}{entry_description}{if:else}{exp:excerpt limit='40' limit_type='words' indicator='...'}{EXAMPLE_BODY_FIELD}{/exp:excerpt}{/if}">```
+With `{exp:excerpt}` wrapped around whatever fieldtype contains your page content, you can make sure EE will generate descriptions automatically if the field is left empty for that entry:
+
+```<meta name="description" content="{if entry_description !=''}{entry_description}{if:else}{exp:excerpt limit='40' limit_type='words' indicator='...'}{EXAMPLE_BODY_FIELD}{/exp:excerpt}{/if}">
+<meta property="og:description" content="{if entry_description !=''}{entry_description}{if:else}{exp:excerpt limit='40' limit_type='words' indicator='...'}{EXAMPLE_BODY_FIELD}{/exp:excerpt}{/if}">```
 
 ## Changelog
 
