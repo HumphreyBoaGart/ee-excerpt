@@ -1,7 +1,9 @@
-# Excerpt Plugin (for EE3/EE4)
-Strips tags of whatever is in the tag pair and trunciates the remaining text. It's a fork of the [obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay](https://github.com/thinkclay), but heavily modified for EE3/EE4 and PHP 7.
+# Excerpt Plugin (for EE3)
+Strips tags of whatever is in the tag pair and trunciates the remaining text. It's a fork of the [obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay](https://github.com/thinkclay), but heavily modified for EE3 and PHP 7.
 
 This one also sanitizes tag input through EE's `security->xss_clean()` method and performs stricter validation on parameter values.
+
+It should be noted that this has been superceded by the [limit modifier](https://docs.expressionengine.com/latest/templates/variable_modifiers.html#limit), making the plugin unnecessary extra overhead for EE4 users.
 
 ## Usage
 Wrap anything you want to be processed between the tag pairs. This will strip out all tags automatically and do a limit on words after.
