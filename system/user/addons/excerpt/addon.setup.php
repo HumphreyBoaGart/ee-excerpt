@@ -5,7 +5,10 @@ return array(
     'docs_url'    => 'https://github.com/capncornflake/ExpressionEngine-Excerpt-Plugin',
     'author'      => 'Dennis Wyman',
     'author_url'  => 'https://denniswyman.com',
-    'version'     => '2.0',
-    'namespace'   => 'Excerpt\Excerpt',
-    'description' => 'Limits the number of words in some text, after stripping tags. Based on thinkclay\'s obscenely useful EE2 plugin.',
+    'version'     => '2.1',
+    'namespace'   => 'User\Addons\Excerpt',
+    'description' => 'Strips tags of whatever is in the tag pair and trunciates the remaining text.',
 );
+
+/* End of file addon.setup.php */
+/* Location: ./system/user/addons/excerpt/addon.setup.php */

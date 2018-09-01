@@ -1,5 +1,7 @@
 # Excerpt Plugin (for EE3/EE4)
-It's literally just the original and [obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay](https://github.com/thinkclay), but modified to run on ExpressionEngine 3 and 4.
+Strips tags of whatever is in the tag pair and trunciates the remaining text. It's a fork of the [obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay](https://github.com/thinkclay), but heavily modified for EE3/EE4 and PHP 7.
+
+This one also sanitizes tag input through EE's `security->xss_clean()` method and performs stricter validation on parameter values.
 
 ## Usage
 
@@ -44,7 +46,7 @@ The `indicator` parameter can be used to append characters onto the end of the c
 
 
 ##### limit
-The `limit` parameter lets you specify how many words or characters to return. Defaults to 500 if left undefined.
+The `limit` parameter lets you specify how many words or characters to return. Defaults to 100 if left undefined.
 
 ```{exp:excerpt limit="1"}Hello World{/exp:excerpt}```
 > Hello
@@ -53,7 +55,7 @@ The `limit` parameter lets you specify how many words or characters to return. D
 ##### limit_type
 The `limit_type` parameter lets you specify if you want to limit to words (`words`) or characters (`chars`).  
 
-When limiting to characters, the plugin returns whole words, so the actual number of charactars might be slightly larger. 
+When limiting to characters, the plugin returns whole words, so the actual number of characters might be slightly larger. 
 
 ```{exp:excerpt limit="2" limit_type="chars"}Hello World{/exp:excerpt}```
 >Hello
@@ -61,6 +63,16 @@ When limiting to characters, the plugin returns whole words, so the actual numbe
 
 ## Changelog
 
-### 2.0
+### 2.1
+**9/1/2018**
+- Overall partial rewrite to ensure compatibility for EE 4.3.4 and PHP 7.2.
+- Plugin code simplified to a single function. `clean($str)` no longer a separate function.
+- Tag data and parameters now run through EE's `security->xss_clean()` method.
+- `limit` parameter now validated by `ctype_digit` instead of `is_numeric`
+- `limit` now defaults to 100 instead of 500.
+- Stricter validation of `limit_type` parameter.
+- Errors now logged to developer log.
 
-- Initial release
+### 2.0
+**6/26/2018**
+- Initial release of fork.
