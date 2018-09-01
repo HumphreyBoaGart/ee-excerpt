@@ -1,5 +1,5 @@
 # Excerpt Plugin (for EE3)
-Strips tags of whatever is in the tag pair and trunciates the remaining text. It's a fork of the [obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay](https://github.com/thinkclay), but heavily modified for EE3 and PHP 7.
+Strips tags of whatever is in the tag pair and trunciates the remaining text. It's a fork of the [obscenely useful EE2 plugin](https://github.com/thinkclay/ExpressionEngine-Excerpt-Plugin) by [@thinkclay](https://github.com/thinkclay), but heavily modified for EE3.
 
 This one also sanitizes tag input through EE's `security->xss_clean()` method and performs stricter validation on parameter values.
 
